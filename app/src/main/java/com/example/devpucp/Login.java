@@ -6,17 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.launcher);
+        setTheme(R.style.fondo_verde);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
     }
-
-    public void empecemos(View view){
-        Intent intent = new Intent(MainActivity.this, Login.class);
+    public void irAregistrarme(View view){
+        Intent intent = new Intent(Login.this, Registro.class);
         startActivity(intent);
     }
 }
