@@ -23,14 +23,16 @@
         <activity
             android:name=".Registro"
             android:exported="false"
-            android:parentActivityName=".Login">
+            android:parentActivityName=".Login"
+            android:label="Regístrate">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Login"
-            android:exported="false">
+            android:exported="false"
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
