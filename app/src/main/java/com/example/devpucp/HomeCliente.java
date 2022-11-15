@@ -2,6 +2,7 @@ package com.example.devpucp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -41,6 +42,11 @@ public class HomeCliente extends AppCompatActivity {
         popupMenu.show();
 
 
+    }
+
+    public void dispositivosDisponibles(View view){
+        Intent intent = new Intent(HomeCliente.this, Cliente_dispositivosDetalles2.class);
+        startActivity(intent);
     }
 
 }

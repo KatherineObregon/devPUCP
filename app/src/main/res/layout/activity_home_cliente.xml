@@ -37,6 +37,7 @@
         android:layout_width="346dp"
         android:layout_height="79dp"
         android:layout_marginTop="200dp"
+        android:onClick="dispositivosDisponibles"
         android:text="Dispositivos disponibles"
         android:textSize="24sp"
         android:theme="@style/boton_verde_claro"
