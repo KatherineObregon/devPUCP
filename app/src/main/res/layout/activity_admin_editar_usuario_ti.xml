@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin_editarUsuarioTI">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Admin_editarCodigoPUCPTILayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Código PUCP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_editarUsuarioTI">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_Admin_editarCodigoPUCPTI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Admin_correoEditarTILayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Correo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/Admin_editarCodigoPUCPTILayout"
+        app:layout_constraintTop_toBottomOf="@+id/Admin_editarCodigoPUCPTILayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputAdmin_editarCorreoRegistroTI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Admin_nombreEditarTILayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Nombres"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/Admin_correoEditarTILayout"
+        app:layout_constraintTop_toBottomOf="@+id/Admin_correoEditarTILayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputAdmin_editarNombreRegistroTI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Admin_apellidoEditarTILayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Apellidos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/Admin_nombreEditarTILayout"
+        app:layout_constraintTop_toBottomOf="@+id/Admin_nombreEditarTILayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputAdmin_editarApellidoTI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imageView_editarUsuarioTI"
+        android:layout_width="118dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="18dp"
+        android:theme="@style/roundedImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Guardar"
+        android:theme="@style/boton_verde_claro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Admin_apellidoEditarTILayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

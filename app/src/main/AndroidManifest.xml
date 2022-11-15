@@ -15,6 +15,84 @@
         android:theme="@style/Theme.DevPUCP"
         tools:targetApi="31">
         <activity
+            android:name=".Admin_editarUsuarioTI"
+            android:exported="false"
+            android:label="Editar usuario TI"
+            android:parentActivityName=".Admin_UsuariosTI">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Admin_crearUsuarioTI"
+            android:exported="false"
+            android:label="Crear usuario TI"
+            android:parentActivityName=".Admin_UsuariosTI">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Admin_UsuariosTI"
+            android:exported="false"
+            android:label="Lista de usuarios TI"
+            android:parentActivityName=".Admin_home">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Admin_reporteListaUsuarios"
+            android:exported="false"
+            android:label="Lista de usuarios"
+            android:parentActivityName=".Admin_reportes">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Admin_reporteEquipoMasPrestado"
+            android:exported="false"
+            android:label="Equipo más prestado"
+            android:parentActivityName=".Admin_reportes">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Admin_reporteEquiposPrestMarca"
+            android:exported="false"
+            android:label="Préstamos por marca"
+            android:parentActivityName=".Admin_reportes">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Admin_reporteEquiposPrestados"
+            android:exported="false"
+            android:label="Equipos prestados"
+            android:parentActivityName=".Admin_reportes">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Admin_reportes"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Admin_home"
+            android:exported="false"
+            android:label="Bienvenido">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Cliente_historialPrestamosDetalles"
             android:exported="false"
             android:label="Detalles de solicitud"

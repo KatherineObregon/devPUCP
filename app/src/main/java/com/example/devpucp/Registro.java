@@ -21,19 +21,19 @@ public class Registro extends AppCompatActivity {
         String[] rolesList = new String[]{"Alumno", "Docente", "Administrativo"};
         ArrayAdapter<String> adapterAreas = new ArrayAdapter<>(this, R.layout.drop_down_item, rolesList);
 
-        AutoCompleteTextView areas= findViewById(R.id.textInputRol);
-        areas.setAdapter(adapterAreas);
+        AutoCompleteTextView roles= findViewById(R.id.textInputRol);
+        roles.setAdapter(adapterAreas);
 
-        areas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        roles.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                Toast.makeText(Registro.this, areas.getText().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Registro.this, roles.getText().toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
     public void registrar(View view){
-        Intent intent = new Intent(Registro.this, HomeCliente.class);
+        Intent intent = new Intent(Registro.this, Admin_home.class);
         startActivity(intent);
     }
 }
