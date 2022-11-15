@@ -2,6 +2,7 @@ package com.example.devpucp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.RippleDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -65,5 +66,10 @@ public class Cliente_dispositivosDetalles2 extends AppCompatActivity {
         imageSwitcherDisp.setImageResource(imagenesid[index]);
 
 
+    }
+
+    public void irReservarDetalle(View view){
+        Intent intent = new Intent(Cliente_dispositivosDetalles2.this, Cliente_Reservar.class);
+        startActivity(intent);
     }
 }

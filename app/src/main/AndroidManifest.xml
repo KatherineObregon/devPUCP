@@ -15,8 +15,37 @@
         android:theme="@style/Theme.DevPUCP"
         tools:targetApi="31">
         <activity
+            android:name=".Cliente_historialPrestamosDetalles"
+            android:exported="false"
+            android:label="Detalles de solicitud"
+            android:parentActivityName=".Cliente_historialPrestamos">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Cliente_historialPrestamos"
+            android:exported="false"
+            android:label="Historial de préstamos"
+            android:parentActivityName=".HomeCliente">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Cliente_Reservar"
+            android:exported="false"
+            android:label="Reservar"
+            android:parentActivityName=".Cliente_dispositivosDisponibles">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Cliente_dispositivosDetalles2"
-            android:exported="false">
+            android:exported="false"
+            android:label="Detalles de dispositivo"
+            android:parentActivityName=".Cliente_dispositivosDisponibles">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

@@ -4,67 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cliente_dispositivosDetalles2">
-
-
-    <LinearLayout
-        android:id="@+id/layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="90dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageButton
-            android:id="@+id/btn_before"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_before" />
-
-        <ImageSwitcher
-            android:id="@+id/Cliente_imageSwitcherDispDetalle"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_gravity="center"
-            android:inAnimation="@android:anim/slide_in_left"
-            android:outAnimation="@android:anim/slide_out_right" />
-
-        <ImageButton
-            android:id="@+id/btn_next"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_next" />
-
-
-    </LinearLayout>
+    tools:context=".Cliente_historialPrestamosDetalles">
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Tipo:"
+        android:layout_marginTop="32dp"
+        android:text="Motivo:"
         android:textColor="#000000"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Marca:"
+        android:text="Curso:"
         android:textColor="#000000"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -76,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Características:"
+        android:text="Programas:"
         android:textColor="#000000"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -88,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Accesorios incluidos:"
+        android:text="Otros_"
         android:textColor="#000000"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -100,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Stock:"
+        android:text="Estado:"
         android:textColor="#000000"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -108,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <TextView
-        android:id="@+id/textView_Cliente_detalleTipoDisp"
+        android:id="@+id/textView_Cliente_detalleSolRechazadoMotivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -119,7 +79,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView11" />
 
     <TextView
-        android:id="@+id/textView_Cliente_detalleMarcaDisp"
+        android:id="@+id/textView_Cliente_detalleSolRechazadCurso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -130,7 +90,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView12" />
 
     <TextView
-        android:id="@+id/textView_Cliente_detalleCaracteristicaDisp"
+        android:id="@+id/textView_Cliente_detalleSolRechazadoProgramas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -141,7 +101,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView13" />
 
     <TextView
-        android:id="@+id/textView_Cliente_detalleAccesoriosDisp"
+        android:id="@+id/textView_Cliente_detalleSolRechazadoOtros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -152,7 +112,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView14" />
 
     <TextView
-        android:id="@+id/textView_Cliente_detalleStockDisp"
+        android:id="@+id/textView_Cliente_detalleSolRechazadoEstado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -162,17 +122,25 @@
         app:layout_constraintStart_toEndOf="@+id/textView15"
         app:layout_constraintTop_toTopOf="@+id/textView15" />
 
-    <Button
-        android:id="@+id/btn_reservarDetalle"
+    <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="irReservarDetalle"
-        android:text="Reservar"
-        android:theme="@style/boton_verde_claro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_Cliente_detalleStockDisp" />
+        android:layout_marginTop="20dp"
+        android:text="Justificación:"
+        android:textColor="@color/ic_logo_pucp_background"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
+    <TextView
+        android:id="@+id/textView_Cliente_detalleSolRechazadoJustificacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="1dp"
+    android:fillViewport="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".Cliente_Reservar">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/Cliente_reservaMotivoLayout"
+            android:layout_width="340dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="24dp"
+            android:hint="Motivo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_Cliente_reservaMotivo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_Cliente_reservaTiempoLayout"
+            android:layout_width="340dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="16dp"
+            android:hint="Tiempo de reserva en días (1-30)"
+            app:layout_constraintStart_toStartOf="@+id/input_Cliente_reservaCursoLayout"
+            app:layout_constraintTop_toBottomOf="@+id/input_Cliente_reservaCursoLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_Cliente_reservaTIempo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_Cliente_reservaCursoLayout"
+            android:layout_width="340dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="16dp"
+            android:hint="Curso"
+            app:layout_constraintStart_toStartOf="@+id/Cliente_reservaMotivoLayout"
+            app:layout_constraintTop_toBottomOf="@+id/Cliente_reservaMotivoLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_Cliente_reservaCurso"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_Cliente_reservaProgramasLayout"
+            android:layout_width="340dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="16dp"
+            android:hint="Programas"
+            app:layout_constraintStart_toStartOf="@+id/input_Cliente_reservaTiempoLayout"
+            app:layout_constraintTop_toBottomOf="@+id/input_Cliente_reservaTiempoLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_Cliente_reservaProgramas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_Cliente_reservaOtrosLayout"
+            android:layout_width="340dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="16dp"
+            android:hint="Otros"
+            app:layout_constraintStart_toStartOf="@+id/input_Cliente_reservaProgramasLayout"
+            app:layout_constraintTop_toBottomOf="@+id/input_Cliente_reservaProgramasLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_Cliente_reservaOtros"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btn_reservaSolicitud"
+            android:layout_width="167dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="16dp"
+            android:onClick="reservaCompletada"
+            android:text="Completar reserva"
+            android:theme="@style/boton_amarillo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="93dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/input_Cliente_reservaOtrosLayout"
+            app:layout_constraintTop_toBottomOf="@+id/input_Cliente_reservaOtrosLayout"
+            app:srcCompat="@drawable/ic_profile_foreground" />
+
+        <Button
+            android:id="@+id/btn_Cliente_anadirDNI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Añadir foto de DNI"
+            android:theme="@style/boton_verde_claro"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
