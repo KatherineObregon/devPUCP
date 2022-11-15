@@ -28,6 +28,14 @@
         <item name="cornerSize">20dp</item>
         <item name="cornerFamily">cut</item>
     </style>
+    <style name="boton_amarillo" parent="Theme.Material3.DayNight">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#FFD21F</item>
+        <item name="colorPrimaryVariant">#240056</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="shapeAppearance">@style/mdcTheme</item>
+
+    </style>
 
     <style name="boton_verde_claro" parent="Theme.Material3.DayNight">
         <!-- Primary brand color. -->
