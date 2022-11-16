@@ -6,20 +6,8 @@
     android:layout_height="wrap_content">
 
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="85dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="16dp"
-        android:text="Reservar"
-        android:textSize="8sp"
-        android:theme="@style/boton_verde_claro"
-        app:layout_constraintBottom_toBottomOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
-
     <ImageView
-        android:id="@+id/Cliente_imageViewDisp"
+        android:id="@+id/UsuarioTI_imageViewDispReserva"
         android:layout_width="85dp"
         android:layout_height="58dp"
         android:layout_marginStart="16dp"
@@ -39,8 +27,8 @@
         android:textColor="#000000"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/Cliente_imageViewDisp"
-        app:layout_constraintTop_toTopOf="@+id/Cliente_imageViewDisp" />
+        app:layout_constraintStart_toEndOf="@+id/UsuarioTI_imageViewDispReserva"
+        app:layout_constraintTop_toTopOf="@+id/UsuarioTI_imageViewDispReserva" />
 
     <Button
         android:id="@+id/button2"
@@ -51,7 +39,7 @@
         android:textSize="8sp"
         android:theme="@style/boton_amarillo"
         app:layout_constraintBottom_toBottomOf="@+id/textView10"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/button12"
         app:layout_constraintTop_toTopOf="@+id/textView9" />
 
     <TextView
@@ -74,11 +62,11 @@
         android:textColor="#000000"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/Cliente_imageViewDisp"
+        app:layout_constraintBottom_toBottomOf="@+id/UsuarioTI_imageViewDispReserva"
         app:layout_constraintStart_toStartOf="@+id/textView8" />
 
     <TextView
-        android:id="@+id/textViewTipoDisp"
+        android:id="@+id/UsuarioTI_textViewTipoDispGestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
@@ -90,7 +78,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView9" />
 
     <TextView
-        android:id="@+id/textViewMarcaDisp"
+        android:id="@+id/UsuarioTI_textViewMarcaDispGestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
@@ -102,7 +90,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView8" />
 
     <TextView
-        android:id="@+id/textViewStockDisp"
+        android:id="@+id/UsuarioTI_textViewStockDispGestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
@@ -112,6 +100,18 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView10"
         app:layout_constraintStart_toEndOf="@+id/textView10"
         app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="85dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="8dp"
+        android:text="Eliminar"
+        android:textSize="8sp"
+        android:theme="@style/boton_rojo"
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

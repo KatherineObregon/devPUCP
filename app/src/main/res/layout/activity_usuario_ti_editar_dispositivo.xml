@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UsuarioTI_editarDispositivo">
+
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_UsuarioTI_before"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_before" />
+
+        <ImageSwitcher
+            android:id="@+id/UsuarioTI_imageSwitcherDispEditar"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:inAnimation="@android:anim/slide_in_left"
+            android:outAnimation="@android:anim/slide_out_right" />
+
+        <ImageButton
+            android:id="@+id/btn_UsuarioTI_next"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_next" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_subirFotoAnadir"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Añadir"
+        android:theme="@style/boton_verde_claro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/UsuarioTI_inputJustificacionRechazo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Marca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textInputTipoEditarLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputTipoEditarLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/UsuarioTI_inputEditarDispMarca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/UsuarioTI_inputEditarDispCaracteristicasLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Características"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/UsuarioTI_inputJustificacionRechazo"
+        app:layout_constraintTop_toBottomOf="@+id/UsuarioTI_inputJustificacionRechazo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/UsuarioTI_inputEditarDispCaracteristicas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/UsuarioTI_inputEditarDispAccesoriosLayout"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Accesorios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UsuarioTI_inputEditarDispCaracteristicasLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/UsuarioTI_inputEditarDispAccesorios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/UsuarioTI_inputEditarDispStockLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Stock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/UsuarioTI_inputEditarDispAccesoriosLayout"
+        app:layout_constraintTop_toBottomOf="@+id/UsuarioTI_inputEditarDispAccesoriosLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/UsuarioTI_inputEditarDispStock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputTipoEditarLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="360dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:hint="Tipo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_subirFotoAnadir">
+
+        <AutoCompleteTextView
+            android:id="@+id/textInputTipoEditarOpciones"
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            android:inputType="none">
+
+        </AutoCompleteTextView>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Guardar"
+        android:theme="@style/boton_verde_claro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UsuarioTI_inputEditarDispStockLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

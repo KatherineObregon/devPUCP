@@ -33,7 +33,7 @@ public class Registro extends AppCompatActivity {
         });
     }
     public void registrar(View view){
-        Intent intent = new Intent(Registro.this, Admin_home.class);
+        Intent intent = new Intent(Registro.this, UsuarioTI_home.class);
         startActivity(intent);
     }
 }

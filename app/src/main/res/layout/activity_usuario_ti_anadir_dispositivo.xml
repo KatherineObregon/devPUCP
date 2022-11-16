@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registro">
+    tools:context=".UsuarioTI_anadirDispositivo">
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="103dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="2dp"
+        android:id="@+id/UserTI_imageViewDispAnadir"
+        android:layout_width="138dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,66 +19,66 @@
         app:srcCompat="@drawable/ic_profile_foreground" />
 
     <Button
-        android:id="@+id/btn_subirFotoRegistro"
+        android:id="@+id/btn_subirFotoAnadir"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="2dp"
         android:text="Añadir"
         android:theme="@style/boton_verde_claro"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintEnd_toEndOf="@+id/UserTI_imageViewDispAnadir"
+        app:layout_constraintStart_toStartOf="@+id/UserTI_imageViewDispAnadir"
+        app:layout_constraintTop_toBottomOf="@+id/UserTI_imageViewDispAnadir" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Admin_nombreRegistroTILayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Nombres"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_subirFotoRegistro">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputAdmin_nombreRegistroTI"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Admin_apellidoRegistroTILayout"
+        android:id="@+id/UsuarioTI_inputAnadirDispMarcaLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:hint="Apellidos"
+        android:hint="Marca"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/Admin_nombreRegistroTILayout"
-        app:layout_constraintTop_toBottomOf="@+id/Admin_nombreRegistroTILayout">
+        app:layout_constraintStart_toStartOf="@+id/textInputTipoLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputTipoLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputAdmin_apellidoRegistroTI"
+            android:id="@+id/UsuarioTI_inputAnadirDispMarca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/codigoPUCPLayout"
+        android:id="@+id/UsuarioTI_inputAnadirDispCaracteristicasLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Características"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/UsuarioTI_inputAnadirDispMarcaLayout"
+        app:layout_constraintTop_toBottomOf="@+id/UsuarioTI_inputAnadirDispMarcaLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/UsuarioTI_inputAnadirDispCaracteristicas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/UsuarioTI_inputAnadirDispAccesoriosLayout"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:hint="Código PUCP"
+        android:hint="Accesorios"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Admin_apellidoRegistroTILayout">
+        app:layout_constraintTop_toBottomOf="@+id/UsuarioTI_inputAnadirDispCaracteristicasLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputcodigoPUCP"
+            android:id="@+id/UsuarioTI_inputAnadirDispAccesorios"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number" />
@@ -86,57 +86,38 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/correoRegistroLayout"
+        android:id="@+id/UsuarioTI_inputAnadirDispStockLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:hint="Correo"
+        android:hint="Stock"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/codigoPUCPLayout"
-        app:layout_constraintTop_toBottomOf="@+id/codigoPUCPLayout">
+        app:layout_constraintStart_toStartOf="@+id/UsuarioTI_inputAnadirDispAccesoriosLayout"
+        app:layout_constraintTop_toBottomOf="@+id/UsuarioTI_inputAnadirDispAccesoriosLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputCorreoPUCP"
+            android:id="@+id/UsuarioTI_inputAnadirDispStock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
+            android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/contrasenaRegistroLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Contraseña"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputRolLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputContrasenaRegistro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputRolLayout"
+        android:id="@+id/textInputTipoLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="360dp"
         android:layout_height="80dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:hint="Rol"
-        app:layout_constraintStart_toStartOf="@+id/correoRegistroLayout"
-        app:layout_constraintTop_toBottomOf="@+id/correoRegistroLayout">
+        android:hint="Tipo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_subirFotoAnadir">
 
         <AutoCompleteTextView
-            android:id="@+id/textInputRol"
+            android:id="@+id/textInputTipoOpciones"
             android:layout_width="match_parent"
             android:layout_height="74dp"
             android:inputType="none">
@@ -146,36 +127,14 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/contrasenaRepetirRegistroLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Contraseña"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contrasenaRegistroLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputContrasenaRepetirRegistro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:onClick="registrar"
-        android:text="Registrarse"
+        android:layout_marginTop="32dp"
+        android:text="Guardar"
         android:theme="@style/boton_verde_claro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contrasenaRepetirRegistroLayout" />
-
+        app:layout_constraintTop_toBottomOf="@+id/UsuarioTI_inputAnadirDispStockLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
