@@ -14,9 +14,9 @@
         android:text="Reservar"
         android:textSize="8sp"
         android:theme="@style/boton_verde_claro"
-        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintBottom_toBottomOf="@+id/registrarUsuarioTI"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
+        app:layout_constraintTop_toTopOf="@+id/registrarUsuarioTI" />
 
     <ImageView
         android:id="@+id/Cliente_imageViewDisp"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="@+id/Cliente_imageViewDisp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/registrarUsuarioTI"
         android:layout_width="85dp"
         android:layout_height="33dp"
         android:layout_marginEnd="8dp"

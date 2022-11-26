@@ -15,7 +15,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
     }
     public void irAregistrarme(View view){
-        Intent intent = new Intent(Login.this, Registro.class);
+        Intent intent = new Intent(Login.this, Admin_crearUsuarioTI.class);
         startActivity(intent);
     }
 }

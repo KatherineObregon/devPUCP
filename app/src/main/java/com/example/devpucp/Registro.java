@@ -8,9 +8,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class Registro extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,10 @@ public class Registro extends AppCompatActivity {
                 Toast.makeText(Registro.this, roles.getText().toString(), Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
+
     }
     public void registrar(View view){
         Intent intent = new Intent(Registro.this, UsuarioTI_home.class);

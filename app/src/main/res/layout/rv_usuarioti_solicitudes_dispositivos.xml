@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="@+id/UsuarioTI_imageViewDispSolicitudes" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/registrarUsuarioTI"
         android:layout_width="85dp"
         android:layout_height="33dp"
         android:layout_marginEnd="16dp"
