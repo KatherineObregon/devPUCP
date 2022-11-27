@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -19,7 +21,10 @@ import java.util.Map;
 
 public class Admin_crearUsuarioTI extends AppCompatActivity {
 
-    EditText nombres,apellidos,codigoPUCP,correo,contraseña1,contraseña2;
+    TextInputEditText nombres,apellidos,codigoPUCP,correo,contraseña1,contraseña2;
+
+    TextInputLayout nombres_textInputLayout,apellidos_textInputLayout,codigoPUCP_textInputLayout,correo_textInputLayout,contraseña1_textInputLayout,contraseña2_textInputLayout;
+
     Button btn_registrarUsuarioTI;
 
     private FirebaseFirestore mFireStore;
@@ -40,6 +45,13 @@ public class Admin_crearUsuarioTI extends AppCompatActivity {
         contraseña1 = findViewById(R.id.inputContrasenaRegistro);
         contraseña2 = findViewById(R.id.inputContrasenaRepetirRegistro);
 
+        codigoPUCP_textInputLayout = findViewById(R.id.Admin_codigoPUCPTILayout);
+        correo_textInputLayout = findViewById(R.id.Admin_correoRegistroTILayout);
+        nombres_textInputLayout =  findViewById(R.id.Admin_nombreRegistroTILayout);
+        apellidos_textInputLayout = findViewById(R.id.Admin_apellidoRegistroTILayout);
+        contraseña1_textInputLayout = findViewById(R.id.contrasenaRegistroLayout);
+        contraseña2_textInputLayout = findViewById(R.id.contrasenaRepetirRegistroLayout);
+
         btn_registrarUsuarioTI = findViewById(R.id.registrarUsuarioTI);
 
         btn_registrarUsuarioTI.setOnClickListener(new View.OnClickListener() {
@@ -52,9 +64,18 @@ public class Admin_crearUsuarioTI extends AppCompatActivity {
                 String contraseñaTI1 = contraseña1.getText().toString().trim();
                 String contraseñaTI2 = contraseña2.getText().toString().trim();
 
+
+
+
+                nombres.setError(null);
+
                 if (codigoPucpTI.isEmpty() && correoTI.isEmpty() && nombresTI.isEmpty() && apellidosTI.isEmpty() && contraseñaTI1.isEmpty() && contraseñaTI2.isEmpty()  ){
 
                     Toast.makeText(getApplicationContext(), "Ingresar datos", Toast.LENGTH_SHORT).show();
+                    //nombres.setError("Introducir un nombre");
+                    //nombres.requestFocus();
+                    nombres_textInputLayout.setHelperText("Introducir un nombre");
+                    nombres_textInputLayout.setError("");
 
 
                 } else {
