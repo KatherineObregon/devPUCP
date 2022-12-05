@@ -108,10 +108,10 @@ public class Login extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-    }
-}
-}
         FirebaseUser user = mAuth.getCurrentUser();
         if (user!=null){
             startActivity(new Intent(Login.this, HomeCliente.class));
             finish();
+        }
+    }
+}
