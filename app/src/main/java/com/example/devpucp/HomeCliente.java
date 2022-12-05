@@ -10,12 +10,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class HomeCliente extends AppCompatActivity {
+    FirebaseAuth mAuth;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_cliente);
+
+        mAuth = FirebaseAuth.getInstance();
+
+
     }
 
     @Override
@@ -31,7 +40,13 @@ public class HomeCliente extends AppCompatActivity {
         popupMenu.setOnMenuItemClickListener(menuItem1 -> {
             switch (menuItem1.getItemId()){
                 case R.id.btn_menu_logout:
+
                     Log.d("msg", "btn_cerrar sesion presionado");
+
+                    mAuth.signOut();
+                    finish();
+                    startActivity(new Intent(HomeCliente.this, Login.class));
+
                     return true;
                 default:
                     return false;

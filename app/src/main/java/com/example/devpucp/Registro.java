@@ -14,10 +14,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -30,6 +34,7 @@ public class Registro extends AppCompatActivity {
     TextInputLayout nombres_textInputLayout,apellidos_textInputLayout,codigoPUCP_textInputLayout,correo_textInputLayout,contraseña1_textInputLayout,contraseña2_textInputLayout;
     Button btn_registrarUsuario;
     private FirebaseFirestore mFireStore;
+    FirebaseAuth mAuth;
 
 
     @SuppressLint("MissingInflatedId")
@@ -39,6 +44,7 @@ public class Registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
         mFireStore = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         String[] rolesList = new String[]{"Alumno", "Docente", "Administrativo"};
         ArrayAdapter<String> adapterAreas = new ArrayAdapter<>(this, R.layout.drop_down_item, rolesList);
@@ -110,27 +116,50 @@ public class Registro extends AppCompatActivity {
 
     private void postUsuario(String codigoPucpTI, String correoTI, String nombresTI, String apellidosTI, String contraseñaTI1, String contraseñaTI2) {
 
-        Map<String, Object> map = new HashMap<>();
-        map.put("nombre", nombresTI);
-        map.put("codigoPUCP", codigoPucpTI);
-        map.put("apellido", apellidosTI);
-        map.put("correo", correoTI);
-        map.put("contraseña1", contraseñaTI1);
-        map.put("contraseña2", contraseñaTI2);
-
-
-        mFireStore.collection("Cliente").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        mAuth.createUserWithEmailAndPassword(correoTI,contraseñaTI1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Toast.makeText(getApplicationContext(), "registro exitoso", Toast.LENGTH_SHORT).show();
-                finish();
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                String id = mAuth.getCurrentUser().getUid();
+
+                Map<String, Object> map = new HashMap<>();
+                map.put("id", id);
+                map.put("nombre", nombresTI);
+                map.put("codigoPUCP", codigoPucpTI);
+                map.put("apellido", apellidosTI);
+                map.put("correo", correoTI);
+                map.put("contraseña1", contraseñaTI1);
+                map.put("contraseña2", contraseñaTI2);
+
+                mFireStore.collection("Cliente").document(id).set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        finish();
+                        startActivity(new Intent( Registro.this, Login.class));
+                        Toast.makeText(Registro.this, "Cliente creado con exito", Toast.LENGTH_SHORT).show();
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Registro.this, "Cliente no fue creado ", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(), "Error al registrar", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Registro.this, "Error al registrar", Toast.LENGTH_SHORT).show();     
             }
         });
+
+
+
+
+
+
     }
 
 }

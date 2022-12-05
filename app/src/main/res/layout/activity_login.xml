@@ -53,7 +53,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputPasswordLayout"
+        android:id="@+id/inputLoginPasswordLayout"
         android:layout_width="320dp"
         android:layout_height="74dp"
         android:layout_marginTop="16dp"
@@ -76,10 +76,10 @@
         android:layout_marginTop="24dp"
         android:text="Iniciar sesión"
         android:theme="@style/boton_verde_claro"
-        app:layout_constraintEnd_toEndOf="@+id/inputPasswordLayout"
+        app:layout_constraintEnd_toEndOf="@+id/inputLoginPasswordLayout"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/inputPasswordLayout"
-        app:layout_constraintTop_toBottomOf="@+id/inputPasswordLayout" />
+        app:layout_constraintStart_toStartOf="@+id/inputLoginPasswordLayout"
+        app:layout_constraintTop_toBottomOf="@+id/inputLoginPasswordLayout" />
 
     <TextView
         android:id="@+id/textView_registrate"
