@@ -27,7 +27,7 @@ public class Admin_crearUsuarioTI extends AppCompatActivity {
 
     Button btn_registrarUsuarioTI;
 
-    private FirebaseFirestore mFireStore;
+    private FirebaseStore mFireStore;
 
 
     @Override
