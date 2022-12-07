@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
 
+
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true"></uses-feature>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18"/>
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -217,7 +225,7 @@
         <activity
             android:name=".Registro"
             android:exported="false"
-            android:label="Regístrate"
+            android:label="Completa tu registro"
             android:parentActivityName=".Login" >
             <meta-data
                 android:name="android.app.lib_name"

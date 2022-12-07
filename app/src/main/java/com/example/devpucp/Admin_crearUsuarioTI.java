@@ -27,7 +27,7 @@ public class Admin_crearUsuarioTI extends AppCompatActivity {
 
     Button btn_registrarUsuarioTI;
 
-    private FirebaseStore mFireStore;
+    //private FirebaseStore mFireStore;
 
 
     @Override
@@ -36,7 +36,7 @@ public class Admin_crearUsuarioTI extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_crear_usuario_ti);
 
-        mFireStore = FirebaseFirestore.getInstance();
+        //mFireStore = FirebaseFirestore.getInstance();
 
         codigoPUCP = findViewById(R.id.input_Admin_codigoPUCPTI);
         correo = findViewById(R.id.inputAdmin_correoRegistroTI);
@@ -104,17 +104,17 @@ public class Admin_crearUsuarioTI extends AppCompatActivity {
         map.put("contraseña2", contraseñaTI2);
 
 
-        mFireStore.collection("UsuarioTI").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Toast.makeText(getApplicationContext(), "registro exitoso", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(), "Error al registrar", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        mFireStore.collection("UsuarioTI").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//            @Override
+//            public void onSuccess(DocumentReference documentReference) {
+//                Toast.makeText(getApplicationContext(), "registro exitoso", Toast.LENGTH_SHORT).show();
+//                finish();
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Toast.makeText(getApplicationContext(), "Error al registrar", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 }

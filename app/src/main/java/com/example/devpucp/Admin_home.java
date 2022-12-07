@@ -10,12 +10,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
 
-public class Admin_home extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
+public class Admin_home extends AppCompatActivity {
+    FirebaseDatabase firebaseDatabase;
+
+    FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_home);
+        firebaseDatabase = FirebaseDatabase.getInstance();
     }
 
 
@@ -33,6 +40,9 @@ public class Admin_home extends AppCompatActivity {
             switch (menuItem1.getItemId()){
                 case R.id.btn_menu_logout:
                     Log.d("msg", "btn_cerrar sesion presionado");
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(Admin_home.this, MainActivity.class));
+                    finish();
                     return true;
                 default:
                     return false;

@@ -45,7 +45,7 @@ public class HomeCliente extends AppCompatActivity {
 
                     mAuth.signOut();
                     finish();
-                    startActivity(new Intent(HomeCliente.this, Login.class));
+                    startActivity(new Intent(HomeCliente.this, MainActivity.class));
 
                     return true;
                 default:

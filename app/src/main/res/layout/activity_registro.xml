@@ -6,77 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Registro">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="103dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/roundedImage"
-        app:srcCompat="@drawable/ic_profile_foreground" />
-
-    <Button
-        android:id="@+id/btn_subirFotoRegistro"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="2dp"
-        android:text="Añadir"
-        android:theme="@style/boton_verde_claro"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutNombre_Registro"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Nombres"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_subirFotoRegistro">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputNombre_Registro"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutApellido_Registro"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Apellidos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutNombre_Registro">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputApellido_Registro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutCodigo_Registro"
         android:layout_width="0dp"
         android:layout_height="56dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:hint="Código PUCP"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutApellido_Registro">
+        app:layout_constraintStart_toStartOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/textView18">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputCodigo_Registro"
@@ -86,55 +25,16 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutCorreo_Registro"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Correo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/layoutCodigo_Registro"
-        app:layout_constraintTop_toBottomOf="@+id/layoutCodigo_Registro">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputCorreo_Registro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutContraseña_Registro"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Contraseña"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputRolLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputContraseña_Registro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputRolLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="360dp"
         android:layout_height="80dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:hint="Rol"
-        app:layout_constraintStart_toStartOf="@+id/layoutCorreo_Registro"
-        app:layout_constraintTop_toBottomOf="@+id/layoutCorreo_Registro">
+        app:layout_constraintStart_toStartOf="@+id/layoutCodigo_Registro"
+        app:layout_constraintTop_toBottomOf="@+id/layoutCodigo_Registro">
 
         <AutoCompleteTextView
             android:id="@+id/textInputRol"
@@ -147,36 +47,51 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutContraseñaRepetir_Registro"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Contraseña"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutContraseña_Registro">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputContrasenaRepetir_Registro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <Button
         android:id="@+id/registrarUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:onClick="registrar"
-        android:text="Registrarse"
+        android:layout_marginTop="64dp"
+        android:onClick="guardarRegistro"
+        android:text="Guardar"
         android:theme="@style/boton_verde_claro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutContraseñaRepetir_Registro" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputRolLayout" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        android:text="Hola, "
+        android:textColor="#009688"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewNombreRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="TextView"
+        android:textColor="#009688"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView16"
+        app:layout_constraintStart_toEndOf="@+id/textView16"
+        app:layout_constraintTop_toTopOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Por favor, finaliza tu registro completando los siguientes datos"
+        app:layout_constraintStart_toStartOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
