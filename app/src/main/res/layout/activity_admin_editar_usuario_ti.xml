@@ -11,12 +11,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:hint="Código PUCP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_editarUsuarioTI">
+        app:layout_constraintTop_toBottomOf="@+id/textView17">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_Admin_editarCodigoPUCPTI"
@@ -27,57 +27,20 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Admin_correoEditarTILayout"
+        android:id="@+id/Admin_nombreEditarTILayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:hint="Correo"
+        android:hint="Nombres"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/Admin_editarCodigoPUCPTILayout"
         app:layout_constraintTop_toBottomOf="@+id/Admin_editarCodigoPUCPTILayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputAdmin_editarCorreoRegistroTI"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Admin_nombreEditarTILayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Nombres"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/Admin_correoEditarTILayout"
-        app:layout_constraintTop_toBottomOf="@+id/Admin_correoEditarTILayout">
-
-        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputAdmin_editarNombreRegistroTI"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Admin_apellidoEditarTILayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Apellidos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/Admin_nombreEditarTILayout"
-        app:layout_constraintTop_toBottomOf="@+id/Admin_nombreEditarTILayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputAdmin_editarApellidoTI"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -90,17 +53,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/ic_profile_foreground" />
 
     <Button
         android:id="@+id/button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:onClick="actualizarUsuario"
         android:text="Guardar"
         android:theme="@style/boton_verde_claro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Admin_apellidoEditarTILayout" />
+        app:layout_constraintTop_toBottomOf="@+id/Admin_nombreEditarTILayout" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="Correo:"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_editarUsuarioTI" />
+
+    <TextView
+        android:id="@+id/textViewCorreoEditarTI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toTopOf="@+id/textView17" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
