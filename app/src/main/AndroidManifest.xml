@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
-
-
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-feature android:name="android.hardware.camera"
-        android:required="true"></uses-feature>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18"/>
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -21,7 +23,21 @@
         android:roundIcon="@mipmap/ic_logo_pucp_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DevPUCP"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/file_paths" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.devpucp.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
         <activity
             android:name=".UsuarioTI_solicitudRechazo"
             android:exported="false"
@@ -34,7 +50,7 @@
             android:name=".UsuarioTI_solicitudReservaDetalles"
             android:exported="false"
             android:label="Detalles de solicitud"
-            android:parentActivityName=".UsuarioTI_solicitudesReserva" >
+            android:parentActivityName=".UsuarioTI_solicitudesReserva">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -42,7 +58,7 @@
         <activity
             android:name=".UsuarioTI_solicitudesReserva"
             android:exported="false"
-            android:label="Solicitudes de reserva" >
+            android:label="Solicitudes de reserva">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -51,7 +67,7 @@
             android:name=".UsuarioTI_MiPerfil"
             android:exported="false"
             android:label="Mi perfil"
-            android:parentActivityName=".UsuarioTI_home" >
+            android:parentActivityName=".UsuarioTI_home">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -60,7 +76,7 @@
             android:name=".UsuarioTI_editarDispositivo"
             android:exported="false"
             android:label="Editar dispositivo"
-            android:parentActivityName=".UsuarioTI_gestionarDispositivos" >
+            android:parentActivityName=".UsuarioTI_gestionarDispositivos">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -69,7 +85,7 @@
             android:name=".UsuarioTI_anadirDispositivo"
             android:exported="false"
             android:label="Añadir dispositivo"
-            android:parentActivityName=".UsuarioTI_gestionarDispositivos" >
+            android:parentActivityName=".UsuarioTI_gestionarDispositivos">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -78,7 +94,7 @@
             android:name=".UsuarioTI_gestionarDispositivos"
             android:exported="false"
             android:label="Gestionar dispositivos"
-            android:parentActivityName=".UsuarioTI_home" >
+            android:parentActivityName=".UsuarioTI_home">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -86,7 +102,7 @@
         <activity
             android:name=".UsuarioTI_home"
             android:exported="false"
-            android:label="Bienvenido" >
+            android:label="Bienvenido">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -95,7 +111,7 @@
             android:name=".Admin_editarUsuarioTI"
             android:exported="false"
             android:label="Editar usuario TI"
-            android:parentActivityName=".Admin_UsuariosTI" >
+            android:parentActivityName=".Admin_UsuariosTI">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -104,7 +120,7 @@
             android:name=".Admin_crearUsuarioTI"
             android:exported="false"
             android:label="Crear usuario TI"
-            android:parentActivityName=".Admin_UsuariosTI" >
+            android:parentActivityName=".Admin_UsuariosTI">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -113,7 +129,7 @@
             android:name=".Admin_UsuariosTI"
             android:exported="false"
             android:label="Lista de usuarios TI"
-            android:parentActivityName=".Admin_home" >
+            android:parentActivityName=".Admin_home">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -122,7 +138,7 @@
             android:name=".Admin_reporteListaUsuarios"
             android:exported="false"
             android:label="Lista de usuarios"
-            android:parentActivityName=".Admin_reportes" >
+            android:parentActivityName=".Admin_reportes">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -131,7 +147,7 @@
             android:name=".Admin_reporteEquipoMasPrestado"
             android:exported="false"
             android:label="Equipo más prestado"
-            android:parentActivityName=".Admin_reportes" >
+            android:parentActivityName=".Admin_reportes">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -140,7 +156,7 @@
             android:name=".Admin_reporteEquiposPrestMarca"
             android:exported="false"
             android:label="Préstamos por marca"
-            android:parentActivityName=".Admin_reportes" >
+            android:parentActivityName=".Admin_reportes">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -149,7 +165,7 @@
             android:name=".Admin_reporteEquiposPrestados"
             android:exported="false"
             android:label="Equipos prestados"
-            android:parentActivityName=".Admin_reportes" >
+            android:parentActivityName=".Admin_reportes">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -166,7 +182,7 @@
         <activity
             android:name=".Admin_home"
             android:exported="false"
-            android:label="Bienvenido" >
+            android:label="Bienvenido">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -175,7 +191,7 @@
             android:name=".Cliente_historialPrestamosDetalles"
             android:exported="false"
             android:label="Detalles de solicitud"
-            android:parentActivityName=".Cliente_historialPrestamos" >
+            android:parentActivityName=".Cliente_historialPrestamos">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -184,7 +200,7 @@
             android:name=".Cliente_historialPrestamos"
             android:exported="false"
             android:label="Historial de préstamos"
-            android:parentActivityName=".HomeCliente" >
+            android:parentActivityName=".HomeCliente">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -193,7 +209,7 @@
             android:name=".Cliente_Reservar"
             android:exported="false"
             android:label="Reservar"
-            android:parentActivityName=".Cliente_dispositivosDisponibles" >
+            android:parentActivityName=".Cliente_dispositivosDisponibles">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -202,7 +218,7 @@
             android:name=".Cliente_dispositivosDetalles2"
             android:exported="false"
             android:label="Detalles de dispositivo"
-            android:parentActivityName=".Cliente_dispositivosDisponibles" >
+            android:parentActivityName=".Cliente_dispositivosDisponibles">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -211,7 +227,7 @@
             android:name=".Cliente_dispositivosDisponibles"
             android:exported="false"
             android:label="Dispositivos disponibles"
-            android:parentActivityName=".HomeCliente" >
+            android:parentActivityName=".HomeCliente">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -219,7 +235,7 @@
         <activity
             android:name=".HomeCliente"
             android:exported="false"
-            android:label="Bienvenido" >
+            android:label="Bienvenido">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -228,14 +244,14 @@
             android:name=".Registro"
             android:exported="false"
             android:label="Completa tu registro"
-            android:parentActivityName=".Login" >
+            android:parentActivityName=".Login">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Login"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -243,7 +259,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/splash_theme" >
+            android:theme="@style/splash_theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
