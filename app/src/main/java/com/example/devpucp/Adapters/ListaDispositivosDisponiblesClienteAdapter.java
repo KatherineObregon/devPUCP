@@ -100,7 +100,6 @@ public class ListaDispositivosDisponiblesClienteAdapter extends RecyclerView.Ada
             marcaDisp =(TextView)  itemView.findViewById(R.id.textViewMarcaDisp);
             stockDisp = (TextView) itemView.findViewById(R.id.textViewStockDisp);
             btnDetallesDisp = (Button) itemView.findViewById(R.id.detalleDispCLiente);
-            btnReservar =(Button) itemView.findViewById(R.id.button4);
             btnDetallesDisp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -111,16 +110,7 @@ public class ListaDispositivosDisponiblesClienteAdapter extends RecyclerView.Ada
 
                 }
             });
-            btnReservar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
 
-                    Log.d("msg", "Dispositivo key "+ dispositivo.getKey());
-
-
-
-                }
-            });
 
         }
 

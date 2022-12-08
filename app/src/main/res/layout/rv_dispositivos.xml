@@ -6,22 +6,10 @@
     android:layout_height="wrap_content">
 
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="85dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
-        android:text="Reservar"
-        android:textSize="8sp"
-        android:theme="@style/boton_verde_claro"
-        app:layout_constraintBottom_toBottomOf="@+id/detalleDispCLiente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/detalleDispCLiente" />
-
     <ImageView
         android:id="@+id/Cliente_imageViewDisp"
-        android:layout_width="85dp"
-        android:layout_height="58dp"
+        android:layout_width="75dp"
+        android:layout_height="57dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
@@ -44,15 +32,16 @@
 
     <Button
         android:id="@+id/detalleDispCLiente"
-        android:layout_width="85dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="105dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="16dp"
         android:text="Detalles"
-        android:textSize="8sp"
+        android:textSize="12sp"
         android:theme="@style/boton_amarillo"
         app:layout_constraintBottom_toBottomOf="@+id/textView10"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
-        app:layout_constraintTop_toTopOf="@+id/textView9" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView9"
+        app:layout_constraintVertical_bias="0.842" />
 
     <TextView
         android:id="@+id/textView8"
