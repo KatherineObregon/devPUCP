@@ -1,9 +1,14 @@
 package com.example.devpucp;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,6 +21,8 @@ import android.widget.ViewSwitcher;
 
 import com.bumptech.glide.Glide;
 import com.example.devpucp.Entities.Dispositivo;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,6 +30,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 public class UsuarioTI_editarDispositivo extends AppCompatActivity {
 
@@ -91,6 +99,60 @@ public class UsuarioTI_editarDispositivo extends AppCompatActivity {
 
 
     }
+    public void cambiarFotoDisp(View view) {
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.setType("image/*");
+        launcherPhotos.launch(intent);
+    }
+    boolean entroSubida = false;
+    ActivityResultLauncher<Intent> launcherPhotos = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK) {
+                    Uri uri = result.getData().getData();
+                    StorageReference child = storageRef.child(uri.getLastPathSegment());
+
+                    child.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            child.getDownloadUrl().addOnSuccessListener(uri1 -> {
+                                entroSubida=true;
+                                imageUrl = uri1.toString();
+                                //usuario.setFotoUrl(imageUrl);
+                                Log.d("msg-test", "ruta archivo: " + imageUrl);
+                                updateImageView();
+                                //Glide.with(Membresia_MiPerfil.this).load(imageUrl).into(imageView);
+                                //usersRef2.setValue(usuario);
+                            }).addOnFailureListener(e -> {
+                                imageUrl = "";
+                                updateImageView();
+                            });
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.d("msg", "Fallo subida",e);
+                            imageUrl = "";
+                            updateImageView();
+                        }
+                    });
+                } else {
+                    Toast.makeText(UsuarioTI_editarDispositivo.this, "Debe seleccionar un archivo", Toast.LENGTH_SHORT).show();
+                    imageUrl = "";
+                    updateImageView();
+                }
+            }
+
+    );
+    public void updateImageView(){
+        if(!imageUrl.isEmpty() && entroSubida){
+            Glide.with(UsuarioTI_editarDispositivo.this).load(imageUrl).into(imageView);
+        }
+    }
+
+
+
+
 
     public void actualizarDispositivo(View view){
 
@@ -99,6 +161,11 @@ public class UsuarioTI_editarDispositivo extends AppCompatActivity {
         String accesoriosNuevoStr = accesorios.getText().toString();
         String stockNuevoStr = stock.getText().toString();
         String tipoNuevo = tipoTV.getText().toString();
+
+        if(entroSubida){
+
+            dispositivo.setFotoUrl(imageUrl);
+        }
 
         dispositivo.setMarca(marcaNuevaStr);
         dispositivo.setTipo(tipoNuevo);
