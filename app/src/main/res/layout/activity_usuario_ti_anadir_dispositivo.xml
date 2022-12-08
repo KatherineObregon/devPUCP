@@ -22,12 +22,12 @@
         android:id="@+id/btn_subirFotoAnadir"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
         android:onClick="subirFotoDispositivo"
         android:text="Añadir"
         android:theme="@style/boton_verde_claro"
-        app:layout_constraintEnd_toEndOf="@+id/UserTI_imageViewDispAnadir"
-        app:layout_constraintStart_toStartOf="@+id/UserTI_imageViewDispAnadir"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UserTI_imageViewDispAnadir" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -139,4 +139,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UsuarioTI_inputAnadirDispStockLayout" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="tomarFoto"
+        android:text="Tomar foto"
+        android:theme="@style/boton_verde_claro"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_subirFotoAnadir"
+        app:layout_constraintStart_toEndOf="@+id/btn_subirFotoAnadir"
+        app:layout_constraintTop_toTopOf="@+id/btn_subirFotoAnadir" />
 </androidx.constraintlayout.widget.ConstraintLayout>
