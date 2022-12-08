@@ -13,6 +13,42 @@ public class Solicitud implements Serializable {
     private String personaKey ;
     private String dispositivoKey;
     private String estado;
+    private String fotoDispUrl;
+    private String tipoDisp;
+    private String marcaDisp;
+    private String nombrePersona;
+
+    public String getFotoDispUrl() {
+        return fotoDispUrl;
+    }
+
+    public void setFotoDispUrl(String fotoDispUrl) {
+        this.fotoDispUrl = fotoDispUrl;
+    }
+
+    public String getTipoDisp() {
+        return tipoDisp;
+    }
+
+    public void setTipoDisp(String tipoDisp) {
+        this.tipoDisp = tipoDisp;
+    }
+
+    public String getMarcaDisp() {
+        return marcaDisp;
+    }
+
+    public void setMarcaDisp(String marcaDisp) {
+        this.marcaDisp = marcaDisp;
+    }
+
+    public String getNombrePersona() {
+        return nombrePersona;
+    }
+
+    public void setNombrePersona(String nombrePersona) {
+        this.nombrePersona = nombrePersona;
+    }
 
     public String getEstado() {
         return estado;

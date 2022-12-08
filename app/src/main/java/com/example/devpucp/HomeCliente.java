@@ -69,4 +69,10 @@ public class HomeCliente extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void solicitudesPrestamos(View view){
+        Intent intent = new Intent(HomeCliente.this, Cliente_solicitudesPrestamo.class);
+        startActivity(intent);
+    }
+
+
 }

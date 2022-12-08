@@ -10,7 +10,7 @@
         android:id="@+id/button6"
         android:layout_width="346dp"
         android:layout_height="79dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:onClick="historialPrestamos"
         android:text="Historial de préstamos"
         android:textSize="24sp"
@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <Button
         android:id="@+id/button"
@@ -32,5 +32,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="346dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="24dp"
+        android:onClick="solicitudesPrestamos"
+        android:text="Solicitudes de préstamo"
+        android:textSize="24sp"
+        android:theme="@style/boton_verde_claro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

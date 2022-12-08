@@ -210,7 +210,12 @@ public class Cliente_Reservar extends AppCompatActivity {
             solicitud.setProgramas(programas.getText().toString());
             solicitud.setPersonaKey(usuarioActual.getKey());
             solicitud.setDispositivoKey(dispositivo.getKey());
+            solicitud.setTipoDisp(dispositivo.getTipo());
+            solicitud.setMarcaDisp(dispositivo.getMarca());
+            solicitud.setNombrePersona(usuarioActual.getNombreApellido());
+            solicitud.setFotoDispUrl(dispositivo.getFotoUrl());
             solicitud.setEstado("Pendiente");
+            solicitud.setKey(newSolicitudRef.getKey());
             if(otros.getText().toString().equalsIgnoreCase("")){
                 solicitud.setOtros("-");
             }
