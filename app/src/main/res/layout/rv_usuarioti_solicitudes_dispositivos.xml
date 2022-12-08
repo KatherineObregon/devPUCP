@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/UsuarioTI_imageViewDispSolicitudes"
-        android:layout_width="85dp"
-        android:layout_height="58dp"
+        android:layout_width="81dp"
+        android:layout_height="66dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
@@ -22,13 +22,12 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:text="Tipo: "
         android:textColor="#000000"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/UsuarioTI_imageViewDispSolicitudes"
-        app:layout_constraintTop_toTopOf="@+id/UsuarioTI_imageViewDispSolicitudes" />
+        app:layout_constraintStart_toStartOf="@+id/textView30"
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
     <Button
         android:id="@+id/registrarUsuarioTI"
@@ -40,7 +39,7 @@
         android:theme="@style/boton_amarillo"
         app:layout_constraintBottom_toBottomOf="@+id/textView10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView9" />
+        app:layout_constraintTop_toTopOf="@+id/textView30" />
 
     <TextView
         android:id="@+id/textView8"
@@ -58,7 +57,7 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fecha:"
+        android:text="Estado:"
         android:textColor="#000000"
         android:textSize="12sp"
         android:textStyle="bold"
@@ -100,6 +99,30 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView10"
         app:layout_constraintStart_toEndOf="@+id/textView10"
         app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="ID: "
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/UsuarioTI_imageViewDispSolicitudes"
+        app:layout_constraintTop_toTopOf="@+id/UsuarioTI_imageViewDispSolicitudes" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView30"
+        app:layout_constraintStart_toEndOf="@+id/textView30"
+        app:layout_constraintTop_toTopOf="@+id/textView30" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

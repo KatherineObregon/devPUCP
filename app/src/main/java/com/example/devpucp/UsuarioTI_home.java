@@ -99,7 +99,7 @@ public class UsuarioTI_home extends AppCompatActivity {
     }
 
     public void solicitudesReserva(View view){
-        Intent intent = new Intent(UsuarioTI_home.this, UsuarioTI_solicitudReservaDetalles.class);
+        Intent intent = new Intent(UsuarioTI_home.this, UsuarioTI_solicitudesReserva.class);
         startActivity(intent);
     }
 }
