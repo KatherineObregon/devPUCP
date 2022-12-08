@@ -9,6 +9,15 @@ public class Usuario implements Serializable {
     private String rol;
     private String codigo;
     private String tipoUsuario;
+    private String fotoUrl;
+
+    public String getFotoUrl() {
+        return fotoUrl;
+    }
+
+    public void setFotoUrl(String fotoUrl) {
+        this.fotoUrl = fotoUrl;
+    }
 
     public String getTipoUsuario() {
         return tipoUsuario;

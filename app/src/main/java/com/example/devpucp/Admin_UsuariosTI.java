@@ -15,7 +15,7 @@ public class Admin_UsuariosTI extends AppCompatActivity {
     }
 
     public void irAnadirUsuarioTI(View view){
-        Intent intent = new Intent(Admin_UsuariosTI.this, Admin_editarUsuarioTI.class);
+        Intent intent = new Intent(Admin_UsuariosTI.this, Admin_crearUsuarioTI.class);
         startActivity(intent);
     }
 

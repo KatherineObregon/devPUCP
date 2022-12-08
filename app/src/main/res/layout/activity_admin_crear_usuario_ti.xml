@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Nombres"
+        android:hint="Nombres y apellidos"
         app:errorEnabled="true"
         app:helperText=""
         app:helperTextEnabled="true"
@@ -64,26 +64,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputAdmin_nombreRegistroTI"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-             />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Admin_apellidoRegistroTILayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Apellidos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/Admin_nombreRegistroTILayout"
-        app:layout_constraintTop_toBottomOf="@+id/Admin_nombreRegistroTILayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputAdmin_apellidoRegistroTI"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,13 +73,12 @@
         android:id="@+id/contrasenaRegistroLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:hint="Contraseña"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Admin_apellidoRegistroTILayout">
+        app:layout_constraintStart_toStartOf="@+id/Admin_nombreRegistroTILayout"
+        app:layout_constraintTop_toBottomOf="@+id/Admin_nombreRegistroTILayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputContrasenaRegistro"
@@ -109,37 +89,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/contrasenaRepetirRegistroLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Repetir contraseña"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contrasenaRegistroLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputContrasenaRepetirRegistro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <Button
         android:id="@+id/registrarUsuarioTI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:onClick="registrar"
+        android:layout_marginTop="24dp"
+        android:onClick="crearUsuarioTI"
         android:text="Registrar"
         android:theme="@style/boton_verde_claro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contrasenaRepetirRegistroLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/contrasenaRegistroLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
