@@ -12,7 +12,15 @@ public class Solicitud implements Serializable {
     private String fotoUrl;
     private String personaKey ;
     private String dispositivoKey;
+    private String estado;
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 
     public String getKey() {
         return key;
