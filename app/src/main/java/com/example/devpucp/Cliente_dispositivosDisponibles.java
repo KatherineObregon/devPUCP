@@ -139,19 +139,25 @@ public class Cliente_dispositivosDisponibles extends AppCompatActivity {
         firebaseDispositivosFiltrado.clear();
         if(tipoFiltro==null && marcaFiltro ==null){
             for (Dispositivo d : firebaseDispositivos) {
-                firebaseDispositivosFiltrado.add(d);
+                if(Integer.parseInt(d.getStock())>0) {
+                    firebaseDispositivosFiltrado.add(d);
+                }
             }
         }else {
             if (tipoFiltro.equalsIgnoreCase("") && marcaFiltro.equalsIgnoreCase("")) {
                 for (Dispositivo d : firebaseDispositivos) {
-                    firebaseDispositivosFiltrado.add(d);
+                    if(Integer.parseInt(d.getStock())>0) {
+                        firebaseDispositivosFiltrado.add(d);
+                    }
                 }
             }
             if (!tipoFiltro.equalsIgnoreCase("") || !marcaFiltro.equalsIgnoreCase("")) {
                 for (Dispositivo d : firebaseDispositivos) {
                     if (d.getTipo().equalsIgnoreCase(tipoFiltro) || d.getMarca().equalsIgnoreCase(marcaFiltro)) {
 
-                        firebaseDispositivosFiltrado.add(d);
+                        if(Integer.parseInt(d.getStock())>0) {
+                            firebaseDispositivosFiltrado.add(d);
+                        }
                     }
                 }
             }
