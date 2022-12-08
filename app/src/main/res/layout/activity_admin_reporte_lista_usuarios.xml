@@ -7,11 +7,13 @@
     tools:context=".Admin_reporteListaUsuarios">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewUsuarios"
         android:layout_width="370dp"
         android:layout_height="675dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/rv_admin_lista_usuarios" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
