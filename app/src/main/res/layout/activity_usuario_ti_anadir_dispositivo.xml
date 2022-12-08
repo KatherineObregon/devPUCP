@@ -16,13 +16,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/roundedImage"
-        app:srcCompat="@drawable/ic_profile_foreground" />
+        app:srcCompat="@drawable/ic_placeholder_layer" />
 
     <Button
         android:id="@+id/btn_subirFotoAnadir"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="2dp"
+        android:onClick="subirFotoDispositivo"
         android:text="Añadir"
         android:theme="@style/boton_verde_claro"
         app:layout_constraintEnd_toEndOf="@+id/UserTI_imageViewDispAnadir"
@@ -81,7 +82,7 @@
             android:id="@+id/UsuarioTI_inputAnadirDispAccesorios"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number" />
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,6 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:onClick="guardarDispositivo"
         android:text="Guardar"
         android:theme="@style/boton_verde_claro"
         app:layout_constraintEnd_toEndOf="parent"

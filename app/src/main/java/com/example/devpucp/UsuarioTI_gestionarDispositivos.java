@@ -14,7 +14,7 @@ public class UsuarioTI_gestionarDispositivos extends AppCompatActivity {
         setContentView(R.layout.activity_usuario_ti_gestionar_dispositivos);
     }
     public void anadirDispositivo(View view){
-        Intent intent = new Intent(UsuarioTI_gestionarDispositivos.this, UsuarioTI_editarDispositivo.class);
+        Intent intent = new Intent(UsuarioTI_gestionarDispositivos.this, UsuarioTI_anadirDispositivo.class);
         startActivity(intent);
     }
 }

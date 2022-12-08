@@ -7,6 +7,7 @@
     tools:context=".UsuarioTI_gestionarDispositivos">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewDispositivosTI"
         android:layout_width="371dp"
         android:layout_height="589dp"
         android:layout_marginTop="8dp"
@@ -14,7 +15,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintTop_toBottomOf="@+id/button7"
+        tools:listitem="@layout/rv_usuarioti_dispositivos" />
 
     <Button
         android:id="@+id/button7"
