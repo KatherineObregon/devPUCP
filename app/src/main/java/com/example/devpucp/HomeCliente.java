@@ -60,7 +60,7 @@ public class HomeCliente extends AppCompatActivity {
     }
 
     public void dispositivosDisponibles(View view){
-        Intent intent = new Intent(HomeCliente.this, Cliente_dispositivosDetalles2.class);
+        Intent intent = new Intent(HomeCliente.this, Cliente_dispositivosDisponibles.class);
         startActivity(intent);
     }
 

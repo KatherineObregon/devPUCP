@@ -10,19 +10,19 @@
         android:id="@+id/button4"
         android:layout_width="85dp"
         android:layout_height="33dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:text="Reservar"
         android:textSize="8sp"
         android:theme="@style/boton_verde_claro"
-        app:layout_constraintBottom_toBottomOf="@+id/registrarUsuarioTI"
+        app:layout_constraintBottom_toBottomOf="@+id/detalleDispCLiente"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/registrarUsuarioTI" />
+        app:layout_constraintTop_toTopOf="@+id/detalleDispCLiente" />
 
     <ImageView
         android:id="@+id/Cliente_imageViewDisp"
         android:layout_width="85dp"
         android:layout_height="58dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
         android:text="Tipo: "
         android:textColor="#000000"
         android:textSize="12sp"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="@+id/Cliente_imageViewDisp" />
 
     <Button
-        android:id="@+id/registrarUsuarioTI"
+        android:id="@+id/detalleDispCLiente"
         android:layout_width="85dp"
         android:layout_height="33dp"
         android:layout_marginEnd="8dp"
