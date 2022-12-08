@@ -39,8 +39,13 @@ public class Cliente_dispositivosDisponibles extends AppCompatActivity {
     String marcaFiltro="";
     String tipoFiltro="";
 
+    String[] marcasDinamicasList ;
+
+
+
     private List<Dispositivo> firebaseDispositivos = new ArrayList<>();
     private ArrayList<Dispositivo> firebaseDispositivosFiltrado = new ArrayList<>();
+    private ArrayList<String> marcasDinamicasArray = new ArrayList<>();
     ListaDispositivosDisponiblesClienteAdapter listaDispositivosDisponiblesClienteAdapter;
 
 
@@ -48,6 +53,12 @@ public class Cliente_dispositivosDisponibles extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente_dispositivos_disponibles);
+
+
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+
 
         //TODO INICIO SELECTOR
         String[] tiposList = new String[]{"Laptop", "Tableta", "Celular", "Monitor"};
@@ -66,25 +77,65 @@ public class Cliente_dispositivosDisponibles extends AppCompatActivity {
             }
         });
 
-        String[] marcasList = new String[]{"Lenovo", "HP", "Sasung", "Huawei"};
-        adapterAreas2 = new ArrayAdapter<>(this, R.layout.drop_down_item, marcasList);
-
-        marcas= findViewById(R.id.Cliente_filtroMarcaDispOpciones);
-        marcas.setAdapter(adapterAreas2);
-
-        marcas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ref= firebaseDatabase.getReference().child("dispositivos");
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot d : snapshot.getChildren()){
+                    Dispositivo dispositivo = d.getValue(Dispositivo.class);
+                    if(!marcasDinamicasArray.contains(dispositivo.getMarca())) {
+                        marcasDinamicasArray.add(dispositivo.getMarca());
+                    }
+                }
+                int i=0;
+                marcasDinamicasList = new String[marcasDinamicasArray.size()];
+                for(String marca : marcasDinamicasArray){
+                    marcasDinamicasList[i]=marca;
+                    Log.d("msg", "en marcas dinamicas list:"+ marca);
+                    i++;
+                }
+                adapterAreas2 = new ArrayAdapter<>(Cliente_dispositivosDisponibles.this, R.layout.drop_down_item, marcasDinamicasList);
 
-                marcaFiltro = marcas.getText().toString();
-                cargarDatosdeFirebase();
-                //Toast.makeText(Cliente_dispositivosDisponibles.this, marcas.getText().toString(), Toast.LENGTH_SHORT).show();
+                marcas= findViewById(R.id.Cliente_filtroMarcaDispOpciones);
+                marcas.setAdapter(adapterAreas2);
+
+                marcas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                        marcaFiltro = marcas.getText().toString();
+                        cargarDatosdeFirebase();
+                        //Toast.makeText(Cliente_dispositivosDisponibles.this, marcas.getText().toString(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
 
+//        String[] marcasList = new String[]{"Lenovo", "HP", "Sasung", "Huawei"};
+//        adapterAreas2 = new ArrayAdapter<>(this, R.layout.drop_down_item, marcasList);
+//
+//        marcas= findViewById(R.id.Cliente_filtroMarcaDispOpciones);
+//        marcas.setAdapter(adapterAreas2);
+//
+//        marcas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//
+//                marcaFiltro = marcas.getText().toString();
+//                cargarDatosdeFirebase();
+//                //Toast.makeText(Cliente_dispositivosDisponibles.this, marcas.getText().toString(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
         //TODO FIN SELECTOR
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
+
         firebaseDispositivos.clear();
         firebaseDispositivosFiltrado.clear();
         RecyclerView recyclerView = findViewById(R.id.RecyclerViewDispositivosCliente);
@@ -116,7 +167,6 @@ public class Cliente_dispositivosDisponibles extends AppCompatActivity {
 
     public void cargarDatosdeFirebase(){
         firebaseDispositivos.clear();
-        Log.d("msg", "entra a cargar datos");
         ref= firebaseDatabase.getReference().child("dispositivos");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -124,7 +174,10 @@ public class Cliente_dispositivosDisponibles extends AppCompatActivity {
                 for (DataSnapshot d : snapshot.getChildren()){
                     Dispositivo dispositivo = d.getValue(Dispositivo.class);
                     firebaseDispositivos.add(dispositivo);
+
                 }
+
+
                 filtrarDispositivos();
             }
 
