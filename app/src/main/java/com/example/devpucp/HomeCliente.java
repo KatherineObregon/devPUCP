@@ -65,7 +65,7 @@ public class HomeCliente extends AppCompatActivity {
     }
 
     public void historialPrestamos(View view){
-        Intent intent = new Intent(HomeCliente.this, Cliente_historialPrestamosDetalles.class);
+        Intent intent = new Intent(HomeCliente.this, Cliente_historialPrestamos.class);
         startActivity(intent);
     }
 

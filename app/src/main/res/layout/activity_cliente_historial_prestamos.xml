@@ -7,11 +7,13 @@
     tools:context=".Cliente_historialPrestamos">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewHistorialCliente"
         android:layout_width="364dp"
         android:layout_height="623dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/rv_historialcliente" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
