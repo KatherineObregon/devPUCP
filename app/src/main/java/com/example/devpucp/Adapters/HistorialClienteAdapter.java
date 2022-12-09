@@ -1,6 +1,7 @@
 package com.example.devpucp.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.devpucp.Cliente_solicitudAprobada;
+import com.example.devpucp.Cliente_solicitudRechazada;
 import com.example.devpucp.Entities.Solicitud;
 import com.example.devpucp.R;
+import com.example.devpucp.UsuarioTI_solicitudReservaDetalles;
 
 import java.util.ArrayList;
 
@@ -92,6 +96,15 @@ public class HistorialClienteAdapter extends RecyclerView.Adapter<HistorialClien
                 @Override
                 public void onClick(View view) {
                     Log.d("msg", "Detalle: "+ solicitud.getKey());
+                    if(solicitud.getEstado().equalsIgnoreCase("Aprobado")){
+                        Intent intent = new Intent(view.getContext(), Cliente_solicitudAprobada.class);
+                        intent.putExtra("historialSolAprobada", solicitud);
+                        itemView.getContext().startActivity(intent);
+                    }else if(solicitud.getEstado().equalsIgnoreCase("Rechazado")){
+                        Intent intent = new Intent(view.getContext(), Cliente_solicitudRechazada.class);
+                        intent.putExtra("historialSolRechazada", solicitud);
+                        itemView.getContext().startActivity(intent);
+                    }
                 }
             });
 
