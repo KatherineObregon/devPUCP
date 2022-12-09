@@ -17,6 +17,42 @@ public class Solicitud implements Serializable {
     private String tipoDisp;
     private String marcaDisp;
     private String nombrePersona;
+    private String lugarRecojo;
+    private String latitud;
+    private String longitud;
+    private String justificacionRechazo;
+
+    public String getLugarRecojo() {
+        return lugarRecojo;
+    }
+
+    public void setLugarRecojo(String lugarRecojo) {
+        this.lugarRecojo = lugarRecojo;
+    }
+
+    public String getJustificacionRechazo() {
+        return justificacionRechazo;
+    }
+
+    public void setJustificacionRechazo(String justificacionRechazo) {
+        this.justificacionRechazo = justificacionRechazo;
+    }
+
+    public String getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(String latitud) {
+        this.latitud = latitud;
+    }
+
+    public String getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
+    }
 
     public String getFotoDispUrl() {
         return fotoDispUrl;
