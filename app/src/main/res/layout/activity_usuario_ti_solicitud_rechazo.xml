@@ -33,8 +33,9 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/UsuarioTI_inputJustificacionRechazo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="349dp"
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,8 +45,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:onClick="confirmarRechazo"
-        android:text="Confirmar"
-        android:theme="@style/boton_verde_claro"
+        android:text="Rechazar"
+        android:theme="@style/boton_rojo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UsuarioTI_inputJustificacionRechazoLayout" />
