@@ -1,9 +1,11 @@
 package com.example.devpucp.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.devpucp.Entities.Solicitud;
 import com.example.devpucp.R;
+import com.example.devpucp.UsuarioTI_solicitudReservaDetalles;
 
 import java.util.ArrayList;
 
@@ -75,6 +78,7 @@ public class SolicitudesUsuarioTIAdapter extends RecyclerView.Adapter<Solicitude
         TextView tipoDisp;
         TextView marcaDisp;
         TextView estadoDisp;
+        Button btnDetallesSol;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -84,6 +88,15 @@ public class SolicitudesUsuarioTIAdapter extends RecyclerView.Adapter<Solicitude
             tipoDisp = (TextView) itemView.findViewById(R.id.UsuarioTI_textViewTipoDispSolicitud);
             marcaDisp =(TextView)  itemView.findViewById(R.id.UsuarioTI_textViewMarcaDispSolicitudes);
             estadoDisp = (TextView) itemView.findViewById(R.id.UsuarioTI_textViewFechaDispSolicitudes);
+            btnDetallesSol = (Button) itemView.findViewById(R.id.detallesSolicitudTI);
+            btnDetallesSol.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(view.getContext(), UsuarioTI_solicitudReservaDetalles.class);
+                    intent.putExtra("solicitudReservaTI", solicitud);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
 
 
 

@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Fecha:"
+            android:text="Días de préstamo:"
             android:textColor="#000000"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -110,53 +110,6 @@
             app:layout_constraintStart_toStartOf="@+id/textView22"
             app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
-        <TextView
-            android:id="@+id/textView20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Apellidos:"
-            android:textColor="#000000"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/textView21"
-            app:layout_constraintTop_toBottomOf="@+id/textView21" />
-
-        <TextView
-            android:id="@+id/textView_UsuarioTIDetalleSoliFechas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="TextView"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView5"
-            app:layout_constraintStart_toEndOf="@+id/textView5"
-            app:layout_constraintTop_toTopOf="@+id/textView5" />
-
-        <TextView
-            android:id="@+id/textView_Cliente_detalleSolRechazadoEstado2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="TextView"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView15"
-            app:layout_constraintStart_toEndOf="@+id/textView15"
-            app:layout_constraintTop_toTopOf="@+id/textView15"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Fecha:"
-            android:textColor="#000000"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/textView15"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
         <ImageView
             android:id="@+id/imageView9"
             android:layout_width="197dp"
@@ -171,14 +124,13 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:text="Motivo:"
             android:textColor="#000000"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+            app:layout_constraintStart_toStartOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <TextView
             android:id="@+id/textView12"
@@ -209,7 +161,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Otros_"
+            android:text="Otros:"
             android:textColor="#000000"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -281,7 +233,8 @@
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@+id/textView15"
             app:layout_constraintStart_toEndOf="@+id/textView15"
-            app:layout_constraintTop_toTopOf="@+id/textView15" />
+            app:layout_constraintTop_toTopOf="@+id/textView15"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/textView4"
@@ -292,8 +245,8 @@
             android:textColor="@color/ic_logo_pucp_background"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintStart_toStartOf="@+id/textView15"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
         <TextView
             android:id="@+id/textView6"
@@ -304,8 +257,8 @@
             android:textColor="#000000"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/textView20"
-            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+            app:layout_constraintStart_toStartOf="@+id/textView21"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
         <TextView
             android:id="@+id/textView_UsuarioTIDetalleSoliNombre"
@@ -317,17 +270,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/textView21"
             app:layout_constraintStart_toEndOf="@+id/textView21"
             app:layout_constraintTop_toTopOf="@+id/textView21" />
-
-        <TextView
-            android:id="@+id/textView_UsuarioTIDetalleSoliApellido"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="TextView"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView20"
-            app:layout_constraintStart_toEndOf="@+id/textView20"
-            app:layout_constraintTop_toTopOf="@+id/textView20" />
 
         <TextView
             android:id="@+id/textView_UsuarioTIDetalleSoliCodigo"
@@ -455,6 +397,30 @@
             app:layout_constraintBottom_toBottomOf="@+id/textView27"
             app:layout_constraintStart_toEndOf="@+id/textView27"
             app:layout_constraintTop_toTopOf="@+id/textView27" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="ID:"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="TextView"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView5"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="@+id/textView5" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
