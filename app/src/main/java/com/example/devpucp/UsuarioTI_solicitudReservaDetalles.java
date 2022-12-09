@@ -190,7 +190,7 @@ public class UsuarioTI_solicitudReservaDetalles extends AppCompatActivity {
 
 
 
-    public void rechazarSolicitud(View view){
+    public void irRechazarSolicitud(View view){
         Intent intent = new Intent(UsuarioTI_solicitudReservaDetalles.this, UsuarioTI_solicitudRechazo.class);
         intent.putExtra("solicitudRechazada", solicitud);
         startActivity(intent);

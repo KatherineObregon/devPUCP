@@ -341,7 +341,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:onClick="rechazarSolicitud"
+            android:onClick="irRechazarSolicitud"
             android:text="Rechazar"
             android:theme="@style/boton_rojo"
             app:layout_constraintBottom_toBottomOf="@+id/button15"
