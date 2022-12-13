@@ -7,15 +7,15 @@
     tools:context=".Admin_reporteEquiposPrestados">
 
 
-
-
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewDispositivosPrestadosAdmin"
         android:layout_width="371dp"
         android:layout_height="589dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/rv_admin_dispositivos_prestados_" />
 
     <TextView
         android:id="@+id/textView3"

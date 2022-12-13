@@ -116,6 +116,9 @@ public class UsuarioTI_aprobarSolicitud extends AppCompatActivity implements OnM
             int stockActual = Integer.parseInt(dispositivo.getStock());
             int nuevoStock = stockActual-1;
             dispositivo.setStock(String.valueOf(nuevoStock));
+            int stockActualprestados = Integer.parseInt(dispositivo.getStockPrestados());
+            int nuevoStockprestados = stockActualprestados+1;
+            dispositivo.setStockPrestados(String.valueOf(nuevoStockprestados));
             dispRef.setValue(dispositivo);
             solicitudesRef.setValue(solicitud).addOnCompleteListener(task -> {
                 Toast.makeText(this, "Se aprobó la solicitud de préstamo exitosamente.", Toast.LENGTH_SHORT).show();

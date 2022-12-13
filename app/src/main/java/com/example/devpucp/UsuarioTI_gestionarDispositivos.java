@@ -82,9 +82,6 @@ public class UsuarioTI_gestionarDispositivos extends AppCompatActivity {
         listaDispositivosUsuarioTIAdapter.notifyDataSetChanged();
 
 
-
-
-
     }
 
     public void anadirDispositivo(View view){

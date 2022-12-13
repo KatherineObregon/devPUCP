@@ -29,6 +29,7 @@ public class Admin_UsuariosTI extends AppCompatActivity {
     private List<Usuario> firebaseUsuarios = new ArrayList<>();
     private ArrayList<Usuario> firebaseUsuariosFiltrado = new ArrayList<>();
     ListaUsuariosTIAdapter listaUsuariosTIAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -266,6 +266,7 @@ public class UsuarioTI_anadirDispositivo extends AppCompatActivity {
             dispositivo.setAccesorios(accesorios.getText().toString());
             dispositivo.setMarca(marca.getText().toString());
             dispositivo.setStock(stock.getText().toString());
+            dispositivo.setStockPrestados("0");
             if(entroSubida || entroTomarFoto){
                 dispositivo.setFotoUrl(imageUrl);
             }

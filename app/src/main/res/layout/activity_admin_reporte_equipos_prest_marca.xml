@@ -53,8 +53,8 @@
         app:layout_constraintTop_toTopOf="@+id/textView3" />
 
 
-
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewDispositivosPrestadosMarcaAdmin"
         android:layout_width="371dp"
         android:layout_height="589dp"
         android:layout_marginTop="16dp"
@@ -62,7 +62,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Admin_reporteMarcaLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/Admin_reporteMarcaLayout"
+        tools:listitem="@layout/rv_admin_dispositivos_prestados_marca" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

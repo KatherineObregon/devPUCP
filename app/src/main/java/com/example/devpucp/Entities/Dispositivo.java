@@ -11,6 +11,8 @@ public class Dispositivo implements Serializable {
     private String accesorios;
     private String stock;
 
+    private String stockPrestados;
+
     public String getKey() {
         return key;
     }
@@ -65,5 +67,13 @@ public class Dispositivo implements Serializable {
 
     public void setStock(String stock) {
         this.stock = stock;
+    }
+
+    public String getStockPrestados() {
+        return stockPrestados;
+    }
+
+    public void setStockPrestados(String stockPrestados) {
+        this.stockPrestados = stockPrestados;
     }
 }
